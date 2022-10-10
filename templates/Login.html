@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login | Short-Links</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="bg-dark d-block modal">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content border-info">
+            <div class="modal-header d-block text-center">
+                <h4 class="modal-title text-info font-italic">Short-Links</h4>
+                <h5 class="modal-title">Login</h5>
+            </div>
+            <div class="modal-body">
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email"
+                               value="{{ email }}" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="password" name="password"
+                               placeholder="Password" required>
+                    </div>
+                    {% if error %}
+                    <small class="form-text text-danger mb-2">{{ error }}</small>
+                    {% endif %}
+                    <a href="/signup">Don't have an Account! Click Here</a>
+                    <button type="submit" class="btn btn-success btn-block">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

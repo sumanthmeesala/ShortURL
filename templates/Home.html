@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home | ShortLinks</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body class="bg-dark">
+
+<div class="container">
+    <nav class="navbar navbar-expand-md mb-3 mt-3 navbar-dark bg-dark sticky-top">
+        <a class="navbar-brand text-info font-italic" href="/">Short-Links</a>
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarMenuToggle">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMenuToggle">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/home">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/home?page=createSL">Create a Short-Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    {% if request.args.get('page') == 'createSL' %}
+    {% include 'CreateSLs.html' %}
+    {% else %}
+    {% include 'Dashboard.html' %}
+    {% endif %}
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
